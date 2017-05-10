@@ -1,0 +1,36 @@
+PUT postcodes 
+{
+  "mappings": {
+    "postcode": {
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "postcode": {
+          "type":"text",
+          "index":"no"
+        },
+        "longitude": {
+          "type": "float",
+          "index":"no"
+        },
+        "latitude": {
+          "type": "float",
+          "index":"no"
+        }
+      }
+    }
+  }
+}
+
+
+GET postcodes/postcode/_search
+{
+    "query": {
+        "ids" : {
+            "type" : "postcode",
+            "values" : "YO607SE"
+        }
+    }
+}
+

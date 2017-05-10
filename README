@@ -1,0 +1,36 @@
+Scripts for storing postcode data in an elastic search index and making it searchable via an ID derivable from the postcode
+
+.:How To:.
+
+1. extract ukpostcodes.zip so that ukpostcodes.csv is in data. ( see https://www.freemaptools.com/download-uk-postcode-lat-lng.htm
+ for up to date data)
+
+2. run load_data.py
+
+WARNINGS: 
+
+1.This will delete any index called postcodes.
+
+2.Assumes ES is on local machine, alter source code if this is not the case
+
+3. On complete run testQuery.py. Should output data for some example postcodes
+
+
+
+.:Project Goals:.
+1. Constrained to using ElasticSearch, I need a fast way of giving a postcode in a query, and getting back the longitude, and lattitude of that query. This is all I need for my use case in the overarching project.[Done]
+2. Extra: Out of intererst I want to see if I can use known information about postcodes to store the data in such a way which increases querying speed than the naive method(1).
+    e.g: Give some inward code, only look at relevant postcodes. I think the lookup time is not related to size of index away.
+
+.:Todo:.
+[X] Create out postcodes Index. (Make sure to not have text search features on anything)
+[X] Stream postcodes in from the CSV, this is a large file, we will use the bulk API to store the information we need.
+    - Probably store the postcode id as uppercase with no space
+[X] Make query function, then module it up for project use!
+
+
+Data Source:
+https://www.freemaptools.com/download-uk-postcode-lat-lng.htm
+
+Data Information:
++ There are roughly of 18 million postcodes (rounding up)!
