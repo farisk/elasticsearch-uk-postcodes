@@ -25,6 +25,8 @@ def createPostcodeSearcher(elasticSearchAddress = '127.0.0.1', port=9200):
 
 #return actual document if postcode was found, else return false.
 def parseResult(result):
+    if not result:
+        return False
     results = result['hits']['hits']
     if (len(results) > 0):
         return results[0]['_source']
