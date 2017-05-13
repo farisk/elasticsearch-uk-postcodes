@@ -31,6 +31,10 @@ Optional: Import postcodes_es_query into your server and begin serving requests 
     - Probably store the postcode id as uppercase with no space
 [X] Make query function, then module it up for project use!
 
+Dependencies:
+uk-postcode-utils: https://pypi.python.org/pypi/uk-postcode-utils (included)
+elasticsearch
+request
 
 Data Source:
 https://www.freemaptools.com/download-uk-postcode-lat-lng.htm
