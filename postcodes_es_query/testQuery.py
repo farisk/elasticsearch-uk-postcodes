@@ -4,12 +4,15 @@ def displayResult(res):
     if not res:
         print('postcode not valid!')
     else:
-        print(res.json())
+        print('RAW',res)
+        print('PARSED', postcode_query.parseResult(res))
 
-displayResult(postcode_query.postcodeSearch('YO607SE'))
-displayResult(postcode_query.postcodeSearch('YO60 7SE'))
-displayResult(postcode_query.postcodeSearch('yo60 7se'))
+postcodeSearcher = postcode_query.createPostcodeSearcher('127.0.0.1',9200)
+displayResult(postcodeSearcher('YO607SE'))
+displayResult(postcodeSearcher('YO60 7SE'))
+displayResult(postcodeSearcher('yo60 7se'))
 
-displayResult(postcode_query.postcodeSearch('S 5 7 j X '))
+displayResult(postcodeSearcher('S 5 7 j X '))
 
-displayResult(postcode_query.postcodeSearch('ZQTPD'))
+displayResult(postcodeSearcher('ZQTPD'))
+displayResult(postcodeSearcher('s6 7Sz'))
