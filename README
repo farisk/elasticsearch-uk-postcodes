@@ -14,8 +14,9 @@ WARNINGS:
 
 2.Assumes ES is on local machine, alter source code if this is not the case
 
-3. On complete run testQuery.py. Should output data for some example postcodes. (Requires requests)
+3. When the script has done, go into postcodes_es_query, and  run testQuery.py. Should output data for some example postcodes. (Requires requests)
 
+Optional: Import postcodes_es_query into your server and begin serving requests based on postcode input!
 
 
 
