@@ -1,5 +1,5 @@
 Scripts for storing postcode data in an elastic search index and making it searchable via an ID derivable from the postcode. This ID is a postcode with all chars uppercase and no spaces. Only the longitude, and latitude is stored for 17million+ Uk postcodes.
-The scripts have been tested on python3, and elastic search 5.2.2.
+The scripts have been tested on python3, and elastic search 5+
 
 .:How To:.
 
